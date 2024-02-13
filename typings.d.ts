@@ -5,6 +5,7 @@ interface ISearchInputProps {
 }
 
 interface ICurrentWeatherProps {
+    cod: string;
     dt: number;
     name: string;
     wind: {

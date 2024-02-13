@@ -12,7 +12,7 @@ export default function Home() {
 	const [currentWeather, setCurrentWeather] = useState<ICurrentWeatherProps>();
 	const [forecast, setForecast] = useState<IForecastProps>();
 	const [searchedCity, setSearchedCity] = useState<string>();
-	const [formattedCity, setFormattedCity] = useState<string>('Vancouver');
+	const [formattedCity, setFormattedCity] = useState<string>();
 
 	useEffect(() => {
 		const apiKey = 'a7ca3f3636a835de326df07859bf1e3f';
@@ -37,7 +37,7 @@ export default function Home() {
 		if (formattedCity) {
 		  fetchData();
 		}
-		
+
 	}, [formattedCity]);
 
 	return (
@@ -48,10 +48,22 @@ export default function Home() {
 					setSearchedCity={setSearchedCity}
 					setFormattedCity={setFormattedCity}
 				/>
-				<main className={styles.main}>
-					{currentWeather && <CurrentWeather {...currentWeather} />}
-					{forecast && <ForecastWeather {...forecast} />}
-				</main>
+				{
+					currentWeather && currentWeather.cod !== '404' ? (
+						<main>
+							{currentWeather && <CurrentWeather {...currentWeather} />}
+							{forecast && <ForecastWeather {...forecast} />}
+						</main>
+					) : (
+						<main>
+							<div className={styles.empty_data__container}>
+								<p>Welcome To</p>
+								<h1>Tomo</h1>
+								<p>Find out the weather conditions of any city by using the search bar on top.</p>
+							</div>
+						</main>
+					)
+				}
 			</div>
 			<Footer/>
 		</>
