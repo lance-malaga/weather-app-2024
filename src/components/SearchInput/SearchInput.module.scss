@@ -1,0 +1,26 @@
+.search__input {
+    input {
+        padding: 0 0 5px;
+        border-bottom: 3px solid var(--color-black);
+        font-size: 16px;
+        background-color: transparent;
+        color: var(--color-black);
+        width: 250px;
+    }
+    input::placeholder {
+        color: var(--color-gray);
+    }
+    input:focus {
+        outline: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .search__input {
+        display: flex;
+        justify-content: center;
+        input {
+            width: 80%;
+        }
+    }
+}

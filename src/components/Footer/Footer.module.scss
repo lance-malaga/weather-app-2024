@@ -1,0 +1,14 @@
+.footer__container {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 45px;
+    gap: 20px;
+
+    p {
+        border-left: 1px solid var(--color-white);
+        padding-left: 20px;
+    }
+}

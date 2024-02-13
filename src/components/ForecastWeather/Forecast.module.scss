@@ -1,0 +1,46 @@
+.forecast__container {
+    border-top: 6px solid var(--color-black);
+    padding: 50px 0 70px;
+    h5 {
+        font-size: 20px;
+    }
+}
+
+.forecast_cards__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    .forecast_card {
+        border: 6px solid var(--color-black);
+        padding: 15px 20px;
+        width: 190px;
+
+        &__date {
+            text-align: right;
+        }
+        img {
+            margin: 30px auto;
+        }
+        &__temp {
+            font-weight: var(--font-bold);
+            font-size: 24px;
+        }
+        &__wind,
+        &__desc {
+            font-size: 14px;
+        }
+        &__desc {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--color-gray);
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .forecast_cards__container {
+        justify-content: center;
+        gap: 20px;
+    }
+}
